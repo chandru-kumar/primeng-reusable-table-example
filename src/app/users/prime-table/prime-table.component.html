@@ -1,4 +1,4 @@
-<p-table [columns]="cols" [value]="data" responsiveLayout="scroll">
+<p-table [columns]="columns" [value]="data" responsiveLayout="scroll">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">
@@ -6,11 +6,18 @@
             </th>
         </tr>
     </ng-template>
+    <!-- <ng-container *ngTemplateOutlet="bodyTemplate;"></ng-container> -->
+    
     <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <ng-template #defaultTemplate>
         <tr>
             <td *ngFor="let col of columns">
                 {{rowData[col.field]}}
             </td>
+            
         </tr>
+    </ng-template>
+        
+    <ng-container *ngTemplateOutlet="customBodyTemplate ? customBodyTemplate : defaultTemplate; context: {$implicit: rowData}" ></ng-container>
     </ng-template>
 </p-table>

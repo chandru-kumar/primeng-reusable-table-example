@@ -1,0 +1,13 @@
+<app-prime-table
+    [data]="data"
+    [columns]="columns"
+    [customBodyTemplate] = "customBodyTemplate"
+></app-prime-table>
+
+<ng-template #customBodyTemplate let-rowData>
+    <tr>
+        <td *ngFor="let col of columns">
+            <a href="">{{rowData[col.field]}}</a>
+        </td>
+    </tr>
+</ng-template>

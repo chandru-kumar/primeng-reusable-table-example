@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { PrimeTableComponent } from './users/prime-table/prime-table.component';
 import {TableModule} from 'primeng/table';
+import { CustomUsersComponent } from './users/custom-users/custom-users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    PrimeTableComponent
+    PrimeTableComponent,
+    CustomUsersComponent
   ],
   imports: [
     BrowserModule,

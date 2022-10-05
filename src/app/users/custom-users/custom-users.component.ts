@@ -1,17 +1,18 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-custom-users',
+  templateUrl: './custom-users.component.html',
+  styleUrls: ['./custom-users.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class CustomUsersComponent implements OnInit {
 
   data: any[] = [];
 
   columns: any[] = [];
 
-  //tableBody!: TemplateRef<any>;
+  @Input()
+  customBodyTemplate!: TemplateRef<any>;
 
   constructor() { }
 

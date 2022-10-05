@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,ContentChild, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-prime-table',
@@ -11,7 +11,10 @@ export class PrimeTableComponent implements OnInit {
   data: any[] = [];
 
   @Input()
-  cols: any[] = [];
+  columns: any[] = [];
+
+  @Input()
+  customBodyTemplate!: TemplateRef<any>;
 
   constructor() { }
   ngOnInit() {
